@@ -31,8 +31,8 @@ spring:
 keycloak:
   auth-server-url: http://localhost:8081
   realm: jvconstructions
-  clientId: jvconstructions-app
-  clientSecret: uEpnXorNvVf9TrHNvUZPJiwgyHoNilvY
+  clientId:
+  clientSecret:
 
 media:
   s3:
@@ -40,5 +40,5 @@ media:
     bucket: jvconstructions-media
     cdnDomain: d1vy2v1dpaxgo7.cloudfront.net
     presignExpirySeconds: 300
-    accessKey: AKIAYYUCTCB4QQRWQ4V3
-    secretKey: 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
+    accessKey:
+    secretKey:
