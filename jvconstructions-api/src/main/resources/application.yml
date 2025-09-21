@@ -1,0 +1,44 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: jv-constructions-api
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3321/jv_constructions?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: pse
+    password: r3n3w@bl3
+
+  jpa:
+    hibernate:
+      ddl-auto: none  # change to validate in prod
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  cache:
+    type: simple
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/jvconstructions
+
+keycloak:
+  auth-server-url: http://localhost:8081
+  realm: jvconstructions
+  clientId: jvconstructions-app
+  clientSecret: uEpnXorNvVf9TrHNvUZPJiwgyHoNilvY
+
+media:
+  s3:
+    region: ap-south-1
+    bucket: jvconstructions-media
+    cdnDomain: d1vy2v1dpaxgo7.cloudfront.net
+    presignExpirySeconds: 300
+    accessKey: AKIAYYUCTCB4QQRWQ4V3
+    secretKey: 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
